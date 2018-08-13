@@ -9,7 +9,7 @@ import DoctorView from './containers/DoctorView';
 import ReviewList from './containers/ReviewList';
 import AddReview from './containers/AddReview';
 import './components/GlobalStyles';
-import {StyledBody, StyledContent, StyledHeader, StyledSidebar} from './layout/Base';
+import {StyledBody, StyledContent, StyledHeader, StyledSidebar} from './layout/styles';
 
 class App extends Component {
   render() {
