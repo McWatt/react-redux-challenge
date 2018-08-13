@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -15,22 +15,18 @@ const StyledEditButton = styled.div`
     right: 0;
 `;
 
-class ReviewListItem extends Component {
-    render() {
-        const {userName, timestamp, content} = this.props.review;
-        const editPath = `/doctor/${this.props.doctorId}/review/${this.props.review.id}`;
-        
-        return (
-            <StyledReview>
-                <time>{timestamp}</time>
-                <h2>{userName}</h2>
-                <p>{content}</p>
-                <StyledEditButton>
-                    <Link to={editPath}>Edit</Link>
-                </StyledEditButton>
-            </StyledReview>
-        );
-    }
-}
+export default (props) => {
+    const { userName, timestamp, content } = props.review;
+    const editPath = `/doctor/${props.doctorId}/review/${props.review.id}`;
 
-export default ReviewListItem;
+    return (
+        <StyledReview>
+            <time>{timestamp}</time>
+            <h2>{userName}</h2>
+            <p>{content}</p>
+            <StyledEditButton>
+                <Link to={editPath}>Edit</Link>
+            </StyledEditButton>
+        </StyledReview>
+    );
+}

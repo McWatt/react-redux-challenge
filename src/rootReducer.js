@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-// import { getDoctorReviewIds } from "./selectors";
 import merge from 'lodash/merge';
 
 export const REVIEWS_ADD = "Reviews/ADD_REVIEW";
@@ -38,7 +37,7 @@ export const reviewsUpdate = (userName, content, reviewId) => {
     }
 };
 
-const reviews = (state = { ids: [] }, action) => {
+const reviews = (state = {}, action) => {
     switch (action.type) {
         case REVIEWS_ADD:
             return merge({}, state, { [action.payload.id]: { ...action.payload } });
@@ -75,7 +74,7 @@ export const doctorsAddReview = (doctorId, reviewId) => {
     }
 }
 
-const doctors = (state = { ids: [] }, action) => {
+const doctors = (state = {}, action) => {
     switch (action.type) {
         case DOCTORS_REMOVE_REVIEW:
             // refactor into something cleaner without the need to manually clone things

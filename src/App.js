@@ -8,12 +8,16 @@ import SearchBar from './containers/SearchBar';
 import DoctorView from './containers/DoctorView';
 import ReviewList from './containers/ReviewList';
 import AddReview from './containers/AddReview';
-import './components/GlobalStyles';
-import {StyledBody, StyledContent, StyledHeader, StyledSidebar} from './layout/styles';
+import './styled/global';
+import {
+  StyledBody,
+  StyledContent,
+  StyledHeader,
+  StyledSidebar
+} from './styled/layout';
 
 class App extends Component {
   render() {
-    // const redirectPath = `/doctor/${Object.keys(this.props.doctors)[0]}`;
     return (
       <Router>
         <div>
@@ -26,6 +30,7 @@ class App extends Component {
             </StyledSidebar>
             <StyledContent>
               <Route exact path="/" render={() => (
+                // redirecting to default to the first doctor on the list when landing on the root domain
                 <Redirect to={`/doctor/${Object.keys(this.props.doctors)[0]}`} />
               )} />
               <Route path="/doctor/:id" component={DoctorView} />

@@ -1,19 +1,21 @@
 
 
 # Todo
-
-move things out of rootReducer.js
-refactor doctors reducer cases to be more functional/readable
+add proptypes to components
+add jest tests
 add Prettier to workflow
-assess and convert components to functions if stateless
+refactor doctors reducer cases to be more functional/readable
 ask product about distance
-investigate proptypes and use with redux
 
-add routing for review form(s)
 
-/doctor/:doctorId/ <DoctorView />
-/doctor/:doctorId/review/ <AddReview edit="false" />
-/doctor/:doctorId/review/edit/:reviewId <AddReview edit="true" reviewId=:reviewId />
+
+
+
+
+# not doing
+move things out of rootReducer.js
+
+
 
 
 

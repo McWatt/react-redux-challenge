@@ -44,26 +44,23 @@ const StyledArrow = styled.div`
     }
 `;
 
-class DoctorListItem extends Component {
-    render() {
-        const {avatarUrl, name, rating, address, reviewCount, type} = this.props.doctor;
-        return (
-            <StyledContainer current={this.props.isCurrent}>
-                <Avatar url={avatarUrl} />
-                <StyledInfo>
-                    <h2>{name}</h2>
-                    <p>
-                        <DoctorBadge badge={rating}>{rating}</DoctorBadge> {type}<br />
-                        {address.street}<br />
-                        {reviewCount} Reviews
+export default (props) => {
+    const { avatarUrl, name, rating, address, reviewCount, type } = props.doctor;
+    
+    return (
+        <StyledContainer current={props.isCurrent}>
+            <Avatar url={avatarUrl} />
+            <StyledInfo>
+                <h2>{name}</h2>
+                <p>
+                    <DoctorBadge badge={rating}>{rating}</DoctorBadge> {type}<br />
+                    {address.street}<br />
+                    {reviewCount} Reviews
                     </p>
-                </StyledInfo>
-                <StyledArrow>
-                    <Link to={`/doctor/${this.props.doctor.id}/`}>&rarr;</Link>
-                </StyledArrow>
-            </StyledContainer>
-        );
-    }
+            </StyledInfo>
+            <StyledArrow>
+                <Link to={`/doctor/${props.doctor.id}/`}>&rarr;</Link>
+            </StyledArrow>
+        </StyledContainer>
+    );
 }
-
-export default DoctorListItem;
