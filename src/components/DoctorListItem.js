@@ -1,0 +1,69 @@
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import styled, { css } from 'styled-components';
+import DoctorBadge from './DoctorBadge';
+import Avatar from './Avatar';
+
+const StyledContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    border-bottom: 1px solid darkgrey;
+    justify-content: space-between;
+
+    ${props => props.current && css`
+        background-color: rgb(217,240,235);
+    `}
+`;
+
+const StyledInfo = styled.div`
+    padding: 0 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+
+    & > h2 {
+        color: mediumaquamarine;
+        font-size: 1rem;
+        margin: 0;
+        padding-bottom: 0.25em;
+    }
+
+    & > p {
+        margin-top: 0; 
+    }
+
+`;
+
+const StyledArrow = styled.div`
+    flex: 0 0 30px;
+    color: mediumaquamarine;
+    font-size: 2rem;
+
+    & a {
+        text-decoration: none;
+    }
+`;
+
+class DoctorListItem extends Component {
+    render() {
+        const {avatarUrl, name, rating, address, reviewCount, type} = this.props.doctor;
+        return (
+            <StyledContainer current={this.props.isCurrent}>
+                <Avatar url={avatarUrl} />
+                <StyledInfo>
+                    <h2>{name}</h2>
+                    <p>
+                        <DoctorBadge badge={rating}>{rating}</DoctorBadge> {type}<br />
+                        {address.street}<br />
+                        {reviewCount} Reviews
+                    </p>
+                </StyledInfo>
+                <StyledArrow>
+                    <Link to={`/doctor/${this.props.doctor.id}/`}>&rarr;</Link>
+                </StyledArrow>
+            </StyledContainer>
+        );
+    }
+}
+
+export default DoctorListItem;
