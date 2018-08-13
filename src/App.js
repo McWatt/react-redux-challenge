@@ -6,6 +6,7 @@ import './App.css';
 import DoctorList from './containers/DoctorList';
 import SearchBar from './containers/SearchBar';
 import DoctorView from './containers/DoctorView';
+import ReviewList from './containers/ReviewList';
 import AddReview from './containers/AddReview';
 import './components/GlobalStyles';
 import {StyledBody, StyledContent, StyledHeader, StyledSidebar} from './layout/Base';
@@ -21,14 +22,14 @@ class App extends Component {
           </StyledHeader>
           <StyledBody>
             <StyledSidebar>
-              {/* <Route component={DoctorList} /> */}
               <DoctorList />
             </StyledSidebar>
             <StyledContent>
               <Route exact path="/" render={() => (
                 <Redirect to={`/doctor/${Object.keys(this.props.doctors)[0]}`} />
               )} />
-              <Route exact path="/doctor/:id" component={DoctorView} />
+              <Route path="/doctor/:id" component={DoctorView} />
+              <Route exact path="/doctor/:id" component={ReviewList} />
               <Route exact path="/doctor/:id/review" component={AddReview} />
               <Route exact path="/doctor/:id/review/:reviewId" component={() => (<AddReview edit="true" />)} />
             </StyledContent>

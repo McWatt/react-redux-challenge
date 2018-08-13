@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Input from '../components/Input';
 import styled from 'styled-components';
-import Label from '../components/Label';
 
 const StyledContainer = styled.div`
     display: flex;

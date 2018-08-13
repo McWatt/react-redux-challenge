@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Avatar from '../components/Avatar';
-import ReviewList from './ReviewList';
 import { getDoctor } from '../selectors';
+import { withRouter } from 'react-router-dom';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -66,29 +66,24 @@ class DoctorView extends Component {
         const { street, city, state, zip } = this.props.doctor.address;
 
         return (
-            <React.Fragment>
-                <StyledHeader>
-                    <StyledAvatar>
-                        <Avatar url={avatarUrl} large="true" />
-                    </StyledAvatar>
-                    <StyledInfo>
-                        <h2>{name}</h2>
-                        <p>{type}</p>
-                        <footer>{reviewCount} reviews</footer>
-                    </StyledInfo>
-                    <StyledAddress>
-                        <div>&#8680;</div>
-                        <p>Address</p>
-                        <p>
-                            {street}<br />
-                            {city}, {state} {zip}
-                        </p>
-                    </StyledAddress>
-                </StyledHeader>
-                <ReviewList />
-
-                {/* <AddReview doctorId={this.props.doctor.id} /> */}
-            </React.Fragment>
+            <StyledHeader>
+                <StyledAvatar>
+                    <Avatar url={avatarUrl} large="true" />
+                </StyledAvatar>
+                <StyledInfo>
+                    <h2>{name}</h2>
+                    <p>{type}</p>
+                    <footer>{reviewCount} reviews</footer>
+                </StyledInfo>
+                <StyledAddress>
+                    <div>&#8680;</div>
+                    <p>Address</p>
+                    <p>
+                        {street}<br />
+                        {city}, {state} {zip}
+                    </p>
+                </StyledAddress>
+            </StyledHeader>
         )
     }
 }
@@ -99,4 +94,4 @@ function mapStateToProps(state, props) {
     };
 }
 
-export default connect(mapStateToProps)(DoctorView);
+export default withRouter(connect(mapStateToProps)(DoctorView));

@@ -5,7 +5,6 @@ import Button from '../components/Button';
 import styled from 'styled-components';
 import { withRouter } from 'react-router';
 import { getDoctorReviews } from '../selectors';
-import { Link } from 'react-router-dom';
 
 const StyledContainer = styled.div`
     display: flex;
