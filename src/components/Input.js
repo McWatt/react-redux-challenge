@@ -1,21 +1,23 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
 const Input = styled.input.attrs({
-  type: props => props.type || 'text',
+  type: props => props.type || "text"
 })`
   width: 100%;
-  padding: .5rem;
+  padding: 0.5rem;
   font-size: 1rem;
   position: relative;
 
-  ${props => props.icon && css`
-    padding-left: 2em;
-  `}
-
-  ${props => props.validationError && css`
-    &::after {
-        content: 'X';
+  ${props =>
+    props.icon &&
+    css`
+      padding-left: 2em;
+    `} ${props =>
+    props.validationError &&
+    css`
+      &::after {
+        content: "X";
         display: block;
         font-size: 2rem;
         color: mediumaquamarine;
@@ -23,14 +25,14 @@ const Input = styled.input.attrs({
         top: 1em;
         right: 1em;
         z-index: 2;
-    }
-  `}
+      }
+    `};
 `;
 
 Input.propTypes = {
   type: PropTypes.string,
   icon: PropTypes.string,
-  validationError: PropTypes.bool,
-}
+  validationError: PropTypes.bool
+};
 
 export default Input;

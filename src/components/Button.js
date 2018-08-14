@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
 const Button = styled.button`
@@ -49,7 +49,7 @@ Button.propTypes = {
   danger: PropTypes.bool,
   disabled: PropTypes.bool,
   large: PropTypes.bool,
-  next: PropTypes.bool,
-}
+  next: PropTypes.bool
+};
 
 export default Button;

@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
+import styled, { css } from "styled-components";
+import PropTypes from "prop-types";
 
 const DoctorBadge = styled.span`
   border-radius: 0.25em;
@@ -12,27 +12,33 @@ const DoctorBadge = styled.span`
   font-size: .75rem;
   text-transform: uppercase;
 
-  ${props => props.badge === 'high' && css`
-    background-color: salmon;
-    color: white;
-    border-color: salmon;
-  `}
+  ${props =>
+    props.badge === "high" &&
+    css`
+      background-color: salmon;
+      color: white;
+      border-color: salmon;
+    `}
 
-  ${props => props.badge === 'fair' && css`
-    background-color: darkgrey;
-    color: white;
-    border-color: darkgrey;
-  `}
+  ${props =>
+    props.badge === "fair" &&
+    css`
+      background-color: darkgrey;
+      color: white;
+      border-color: darkgrey;
+    `}
 
-  ${props => props.badge === 'low' && css`
-    background-color: mediumaquamarine;
-    color: white;
-    border-color: mediumaquamarine;
-  `}
+  ${props =>
+    props.badge === "low" &&
+    css`
+      background-color: mediumaquamarine;
+      color: white;
+      border-color: mediumaquamarine;
+    `}
 `;
 
 DoctorBadge.propTypes = {
-  badge: PropTypes.string,
-}
+  badge: PropTypes.string
+};
 
 export default DoctorBadge;

@@ -1,8 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   padding: 2rem 1rem;
-  background-image: linear-gradient(to right, rgb(29,17,83), rgb(42,66,107));
+  background-image: linear-gradient(
+    to right,
+    rgb(29, 17, 83),
+    rgb(42, 66, 107)
+  );
 `;
 
 export const StyledBody = styled.div`
