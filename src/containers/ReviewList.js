@@ -3,7 +3,7 @@ import Review from '../components/ReviewListItem';
 import { connect } from 'react-redux';
 import Button from '../components/Button';
 import styled from 'styled-components';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import { getDoctorReviews } from '../selectors';
 
 const StyledContainer = styled.div`
@@ -50,4 +50,4 @@ function mapStateToProps(state, props) {
     };
 }
 
-export default withRouter(connect(mapStateToProps)(ReviewList));
+export default withRouter(connect(mapStateToProps)(ReviewList))

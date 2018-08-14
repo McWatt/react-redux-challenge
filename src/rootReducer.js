@@ -13,7 +13,7 @@ export const reviewsAdd = (userName, content, doctorId, id) => {
             doctorId,
             id,
         },
-        type: REVIEWS_ADD
+        type: REVIEWS_ADD,
     }
 };
 
@@ -33,18 +33,24 @@ export const reviewsUpdate = (userName, content, reviewId) => {
             content,
             reviewId,
         },
-        type: REVIEWS_UPDATE
+        type: REVIEWS_UPDATE,
     }
 };
 
 const reviews = (state = {}, action) => {
     switch (action.type) {
         case REVIEWS_ADD:
-            return merge({}, state, { [action.payload.id]: { ...action.payload } });
+            return merge({}, state, {
+              [action.payload.id]: { ...action.payload }
+            });
         case REVIEWS_REMOVE:
-            return merge({}, state, { [action.payload.id]: { ...action.payload } });
+            return merge({}, state, {
+                [action.payload.id]: { ...action.payload }
+            });
         case REVIEWS_UPDATE:
-            return merge({}, state, { [action.payload.reviewId]: { ...action.payload } });
+            return merge({}, state, {
+                [action.payload.reviewId]: { ...action.payload }
+            });
         default:
             return state;
     }
@@ -78,23 +84,28 @@ const doctors = (state = {}, action) => {
     switch (action.type) {
         case DOCTORS_REMOVE_REVIEW:
             // refactor into something cleaner without the need to manually clone things
-            return (state, action) => {
+            const stateWithRemovedReview = (state, action) => {
+                debugger;
                 const clonedState = { ...state };
                 clonedState[action.payload.doctorId].reviewIds = state[action.payload.doctorId].reviewIds.filter(id => id !== action.payload.reviewId);
 
                 return clonedState;
             };
 
+            return stateWithRemovedReview(state, action);
+
         case DOCTORS_ADD_REVIEW:
             // refactor into something cleaner without the need to manually clone things
-            return (state, action) => {
+            const stateWithAddedReview = (state, action) => {
                 const clonedState = { ...state };
                 const clonedIds = [...state[action.payload.doctorId].reviewIds];
-                clonedIds.push(action.payload.reviewId)
+              clonedIds.push(action.payload.reviewId);
                 clonedState[action.payload.doctorId].reviewIds = clonedIds;
 
                 return clonedState;
             };
+
+            return stateWithAddedReview(state, action);
 
         default:
             return state;

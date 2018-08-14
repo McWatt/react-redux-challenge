@@ -89,6 +89,7 @@ class DoctorView extends Component {
 }
 
 function mapStateToProps(state, props) {
+    console.log('props', props);
     return {
         doctor: getDoctor(state, props.match.params.id)
     };
