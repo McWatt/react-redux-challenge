@@ -1,8 +1,7 @@
 # Todo
 
-finish styling review list items
-add font face that matches design
 add jest tests
+wire up review count to increment/decrement
 refactor doctors reducer cases to be more functional/readable
 ask product about distance
 
@@ -56,3 +55,11 @@ Added redirect to root url to set first doctor on the list as active by default
 
 9:30 to 10pm
 Fixed routing to show doctor header at appropriate times, cleanup
+
+Mon
+9pm to 11pm
+Fixed bug in doctors reducer
+Updated styles
+Added PropTypes
+Added Prettier to flow
+Added Roboto font to everything

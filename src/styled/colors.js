@@ -3,3 +3,4 @@ export const lightaquamarine = "rgb(217, 240, 235)";
 export const darkgrey = "rgb(170, 170, 170)";
 export const salmon = "rgb(247,98,109)";
 export const lightgrey = "lightgrey";
+export const darkslategrey = "rgb(39,59,103)";

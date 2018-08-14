@@ -6,6 +6,9 @@ injectGlobal`
   ${styledNormalize}
   * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: .5px;
   }
 
   body {

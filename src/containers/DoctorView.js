@@ -22,7 +22,7 @@ const StyledInfo = styled.div`
   padding: 0.5rem;
 
   & > h2 {
-    color: ${color.darkgrey};
+    color: ${color.darkslategrey};
     font-size: 2rem;
     margin: 0;
   }
