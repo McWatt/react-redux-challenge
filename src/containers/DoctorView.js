@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Avatar from '../components/Avatar';
@@ -88,8 +89,22 @@ class DoctorView extends Component {
     }
 }
 
+DoctorView.propTypes = {
+    doctor: PropTypes.shape({
+        avatarUrl: PropTypes.string,
+        name: PropTypes.string,
+        type: PropTypes.string,
+        reviewCount: PropTypes.number,
+        address: PropTypes.shape({
+            street: PropTypes.string,
+            city: PropTypes.string,
+            state: PropTypes.string,
+            zip: PropTypes.number,
+        })
+    })
+};
+
 function mapStateToProps(state, props) {
-    console.log('props', props);
     return {
         doctor: getDoctor(state, props.match.params.id)
     };

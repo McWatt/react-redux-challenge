@@ -85,7 +85,6 @@ const doctors = (state = {}, action) => {
         case DOCTORS_REMOVE_REVIEW:
             // refactor into something cleaner without the need to manually clone things
             const stateWithRemovedReview = (state, action) => {
-                debugger;
                 const clonedState = { ...state };
                 clonedState[action.payload.doctorId].reviewIds = state[action.payload.doctorId].reviewIds.filter(id => id !== action.payload.reviewId);
 

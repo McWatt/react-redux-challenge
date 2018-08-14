@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components';
+import PropTypes from "prop-types";
 
 const Textarea = styled.textarea`
   width: 100%;
@@ -22,4 +23,9 @@ const Textarea = styled.textarea`
     }
   `}
 `;
+
+Textarea.propTypes = {
+  validationError: PropTypes.bool,
+}
+
 export default Textarea;

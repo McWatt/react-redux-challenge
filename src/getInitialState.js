@@ -5,7 +5,7 @@ export default {
             name: 'Alice Chang',
             rating: 'fair',
             type: 'Family Practice',
-            avatarUrl: 'http://placekitten.com/50/50',
+            avatarUrl: 'http://placekitten.com/80/80',
             address: {
                 street: '5400 W Rosecrans Ave',
                 city: 'Hawthorne',
@@ -20,7 +20,7 @@ export default {
             name: 'Elva Dreisbach',
             rating: 'high',
             type: 'Internal Medicine',
-            avatarUrl: 'http://placekitten.com/50/50',
+            avatarUrl: 'http://placekitten.com/80/80',
             address: {
                 street: '516 W 219th St',
                 city: 'Hawthorne',
@@ -35,7 +35,7 @@ export default {
             name: 'Michael Genova Md',
             rating: 'fair',
             type: 'Dentist',
-            avatarUrl: 'http://placekitten.com/50/50',
+            avatarUrl: 'http://placekitten.com/80/80',
             address: {
                 street: '2175 Park Place',
                 city: 'Hawthorne',
@@ -50,7 +50,7 @@ export default {
             name: 'Mikki Manson',
             rating: 'low',
             type: 'General Practice',
-            avatarUrl: 'http://placekitten.com/50/50',
+            avatarUrl: 'http://placekitten.com/80/80',
             address: {
                 street: '2175 Park Place',
                 city: 'Hawthorne',
@@ -65,7 +65,7 @@ export default {
             name: 'Stephen Strange',
             rating: 'low',
             type: 'Internal Medicine',
-            avatarUrl: 'http://placekitten.com/50/50',
+            avatarUrl: 'http://placekitten.com/80/80',
             address: {
                 street: '516 W 219th St',
                 city: 'Hawthorne',

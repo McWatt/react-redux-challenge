@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import Review from '../components/ReviewListItem';
 import { connect } from 'react-redux';
 import Button from '../components/Button';
@@ -40,6 +41,15 @@ class ReviewList extends Component {
         )
     }
 }
+
+ReviewList.propTypes = {
+  doctorId: PropTypes.string,
+  reviews: PropTypes.arrayOf(function(propValue, key) {
+    if (typeof key !== "number" || typeof propValue !== "object") {
+      return new Error("reviews collection in ReviewList is malformed");
+    }
+  })
+};
 
 function mapStateToProps(state, props) {
     const doctorId = props.match.params.id;

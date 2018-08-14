@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import PropTypes from "prop-types";
 
 const Input = styled.input.attrs({
   type: props => props.type || 'text',
@@ -25,5 +26,11 @@ const Input = styled.input.attrs({
     }
   `}
 `;
+
+Input.propTypes = {
+  type: PropTypes.string,
+  icon: PropTypes.string,
+  validationError: PropTypes.bool,
+}
 
 export default Input;

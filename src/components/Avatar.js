@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import styled, {css} from 'styled-components';
 
 const StyledAvatar = styled.div`
@@ -16,10 +17,17 @@ const StyledAvatar = styled.div`
     `}
 `;
 
-export default (props) => {
+ const Avatar = (props) => {
     const url = props.url ? props.url : 'http://placeholder.pics/svg/100x100/392FFF-FF7E93/FFFFFF/:)';
 
     return (
         <StyledAvatar large={props.large} url={url} />
     );
 };
+
+Avatar.propTypes = {
+    url: PropTypes.string,
+    large: PropTypes.string,
+}
+
+export default Avatar;

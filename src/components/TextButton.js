@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import PropTypes from "prop-types";
 
 const TextButton = styled.button`
     border: none;
@@ -11,5 +12,9 @@ const TextButton = styled.button`
     font-style: italic;
   `}
 `;
+
+TextButton.propTypes = {
+  disabled: PropTypes.bool,
+}
 
 export default TextButton;

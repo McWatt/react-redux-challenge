@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import { connect, } from 'react-redux';
 import Button from '../components/Button';
 import { getReview } from '../selectors';
@@ -62,7 +63,7 @@ class AddReview extends Component {
             this.state = {
                 content: '',
                 userName: '',
-                mode: false,
+                edit: false,
             }
         }
         
@@ -120,7 +121,7 @@ class AddReview extends Component {
     }
 
     render() {
-        const reviewInvalid = this.state.content.length < 10;
+        const reviewInvalid = this.state.content.length < 4;
         const userNameInvalid = this.state.userName.length < 4;
         const isValid = !reviewInvalid && !userNameInvalid;
 
@@ -146,6 +147,14 @@ class AddReview extends Component {
             </StyledFormContainer>
         );
     }
+}
+
+AddReview.propTypes = {
+    doctorId: PropTypes.string,
+    review: PropTypes.shape({
+        content: PropTypes.string,
+        userName: PropTypes.string,
+    })
 }
 
 function mapStateToProps(state, props) {

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +16,7 @@ const StyledEditButton = styled.div`
     right: 0;
 `;
 
-export default (props) => {
+const ReviewListItem = (props) => {
     const { userName, timestamp, content } = props.review;
     const editPath = `/doctor/${props.doctorId}/review/${props.review.id}`;
 
@@ -30,3 +31,16 @@ export default (props) => {
         </StyledReview>
     );
 }
+
+ReviewListItem.propTypes = {
+    review: PropTypes.shape({
+        userName: PropTypes.string,
+        timestamp: PropTypes.string,
+        content: PropTypes.string,
+        id: PropTypes.string,
+    }),
+    doctorId: PropTypes.string,
+
+}
+
+export default ReviewListItem;

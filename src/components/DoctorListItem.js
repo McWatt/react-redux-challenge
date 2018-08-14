@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled, { css } from 'styled-components';
 import DoctorBadge from './DoctorBadge';
@@ -44,7 +45,7 @@ const StyledArrow = styled.div`
     }
 `;
 
-export default (props) => {
+const DoctorListItem = (props) => {
     const { avatarUrl, name, rating, address, reviewCount, type } = props.doctor;
     
     return (
@@ -64,3 +65,22 @@ export default (props) => {
         </StyledContainer>
     );
 }
+
+DoctorListItem.propTypes = {
+  doctor: PropTypes.shape({
+    avatarUrl: PropTypes.string,
+    name: PropTypes.string,
+    rating: PropTypes.string,
+    address: PropTypes.shape({
+        street: PropTypes.string,
+        city: PropTypes.string,
+        state: PropTypes.string,
+        zip: PropTypes.number,
+      }),
+    reviewCount: PropTypes.number,
+    type: PropTypes.string,
+  }),
+  isCurrent: PropTypes.bool
+};
+
+export default DoctorListItem;

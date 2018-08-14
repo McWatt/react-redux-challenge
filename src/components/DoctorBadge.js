@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const DoctorBadge = styled.span`
   border-radius: 0.25em;
@@ -29,5 +30,9 @@ const DoctorBadge = styled.span`
     border-color: mediumaquamarine;
   `}
 `;
+
+DoctorBadge.propTypes = {
+  badge: PropTypes.string,
+}
 
 export default DoctorBadge;

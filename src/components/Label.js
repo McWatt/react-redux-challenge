@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import PropTypes from "prop-types";
 
 const Label = styled.label`
     position: relative;
@@ -18,4 +19,9 @@ const Label = styled.label`
     }
   `}
 `;
+
+Label.propTypes = {
+    validationError: PropTypes.bool,
+}
+
 export default Label;

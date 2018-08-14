@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import DoctorListItem from '../components/DoctorListItem';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
@@ -15,6 +16,15 @@ class DoctorList extends Component {
             </div>
         )
     }
+}
+
+DoctorList.propTypes = {
+    currentDoctorId: PropTypes.string,
+    doctors: PropTypes.arrayOf(function (propValue, key) {
+        if (typeof key !== 'number' || typeof propValue !== 'object') {
+            return new Error('doctors collection in DoctorList is malformed');
+        }
+    }),
 }
 
 function mapStateToProps(state, props) {
