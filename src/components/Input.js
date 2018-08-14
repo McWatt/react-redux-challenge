@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
+import * as color from "../styled/colors";
 
 const Input = styled.input.attrs({
   type: props => props.type || "text"
@@ -20,7 +21,7 @@ const Input = styled.input.attrs({
         content: "X";
         display: block;
         font-size: 2rem;
-        color: mediumaquamarine;
+        color: ${color.mediumaquamarine};
         position: absolute;
         top: 1em;
         right: 1em;

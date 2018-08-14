@@ -5,11 +5,13 @@ import styled from "styled-components";
 import Avatar from "../components/Avatar";
 import { getDoctor } from "../selectors";
 import { withRouter } from "react-router-dom";
+import * as color from "../styled/colors";
 
 const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid darkslategrey;
+  border-bottom: 1px solid ${color.darkgrey};
+  padding: 1em;
 `;
 const StyledAvatar = styled.div`
   flex: 0 0 50px;
@@ -20,12 +22,12 @@ const StyledInfo = styled.div`
   padding: 0.5rem;
 
   & > h2 {
-    color: darkslategrey;
+    color: ${color.darkgrey};
     font-size: 2rem;
     margin: 0;
   }
   & > p {
-    color: mediumaquamarine;
+    color: ${color.mediumaquamarine};
     padding: 0.5em 0;
     margin: 0;
   }
@@ -54,7 +56,7 @@ const StyledAddress = styled.div`
   }
 
   & > p:last-of-type {
-    color: mediumaquamarine;
+    color: ${color.mediumaquamarine};
     font-size: 1rem;
     margin: 0;
   }

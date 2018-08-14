@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
+import * as color from "../styled/colors";
 
 const Textarea = styled.textarea`
   width: 100%;
@@ -16,7 +17,7 @@ const Textarea = styled.textarea`
         content: "\\02192";
         display: block;
         font-size: 2rem;
-        color: mediumaquamarine;
+        color: ${color.mediumaquamarine};
         color: black;
         position: absolute;
         top: 1em;

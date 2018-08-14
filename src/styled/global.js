@@ -1,5 +1,6 @@
 import { injectGlobal } from "styled-components";
 import styledNormalize from "styled-normalize";
+import * as color from "./colors";
 
 injectGlobal`
   ${styledNormalize}
@@ -12,7 +13,7 @@ injectGlobal`
     padding: 0;
     font-family: sans-serif;
     font-size: 16px;
-    color: darkgrey;
+    color: ${color.darkgrey};
   }
 
   /* base */
@@ -21,14 +22,14 @@ injectGlobal`
   }
 
   a {
-    color: mediumaquamarine;
+    color: ${color.mediumaquamarine};
   }
 
   textarea, input {
-    color: darkgrey;
+    color: ${color.darkgrey};
   }
 
   ::placeholder {
-    color: mediumaquamarine;
+    color: ${color.mediumaquamarine};
   }
 `;

@@ -15,6 +15,7 @@ import {
 } from "../rootReducer";
 import { withRouter } from "react-router";
 import styled from "styled-components";
+import * as color from "../styled/colors";
 
 // TODO: refactor this css to be modular and reusable
 const StyledFormContainer = styled.div`
@@ -23,7 +24,7 @@ const StyledFormContainer = styled.div`
   }
 
   & label {
-    color: mediumaquamarine;
+    color: ${color.mediumaquamarine};
     position: relative;
     margin-bottom: 1em;
     display: block;

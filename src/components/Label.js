@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
+import * as color from "../styled/colors";
 
 const Label = styled.label`
   position: relative;
@@ -8,7 +9,7 @@ const Label = styled.label`
     content: "\\02713";
     display: block;
     font-size: 1.75rem;
-    color: mediumaquamarine;
+    color: ${color.mediumaquamarine};
     position: absolute;
     top: 0.75em;
     right: 0.25em;

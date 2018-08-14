@@ -1,25 +1,14 @@
-
-
 # Todo
-add proptypes to components
+
+finish styling review list items
+add font face that matches design
 add jest tests
-add Prettier to workflow
 refactor doctors reducer cases to be more functional/readable
 ask product about distance
 
-
-
-
-
-
 # not doing
+
 move things out of rootReducer.js
-
-
-
-
-
-
 
 time logging:
 

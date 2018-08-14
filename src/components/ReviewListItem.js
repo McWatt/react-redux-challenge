@@ -2,14 +2,27 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import * as color from "../styled/colors";
 
 const StyledReview = styled.div`
   padding: 1rem;
   position: relative;
+
+  & > h2 {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+
+  & > p {
+    line-height: 1.5;
+    border-bottom: 1px solid ${color.lightgrey};
+    padding-bottom: 2em;
+  }
 `;
 
 const StyledEditButton = styled.div`
-  padding: 1rem;
+  padding: 1em;
   font-size: 0.75rem;
   position: absolute;
   top: 0;

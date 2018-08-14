@@ -1,29 +1,30 @@
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
+import * as color from "../styled/colors";
 
 const Button = styled.button`
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
-  background-color: mediumaquamarine;
+  background-color: ${color.mediumaquamarine};
   color: white;
-  border: 2px solid mediumaquamarine;
+  border: 2px solid ${color.mediumaquamarine};
   font-weight: normal;
 
   ${props =>
     props.danger &&
     css`
       background-color: white;
-      color: rgb(247, 98, 109);
-      border-color: rgb(247, 98, 109);
+      color: ${color.salmon};
+      border-color: ${color.salmon};
     `}
 
   ${props =>
     props.disabled &&
     css`
-      background-color: lightgrey;
+      background-color: ${color.lightgrey};
       color: white;
-      border: 2px solid darkgrey;
+      border: 2px solid ${color.darkgrey};
     `}
 
   ${props =>

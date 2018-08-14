@@ -22,6 +22,5 @@ export const StyledSidebar = styled.aside`
 `;
 
 export const StyledContent = styled.section`
-  padding: 1rem;
   flex: 0 0 65%;
 `;

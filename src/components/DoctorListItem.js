@@ -4,18 +4,19 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import DoctorBadge from "./DoctorBadge";
 import Avatar from "./Avatar";
+import * as color from "../styled/colors";
 
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 1em;
-  border-bottom: 1px solid darkgrey;
+  border-bottom: 1px solid ${color.darkgrey};
   justify-content: space-between;
 
   ${props =>
     props.current &&
     css`
-      background-color: rgb(217, 240, 235);
+      background-color: ${color.lightaquamarine};
     `};
 `;
 
@@ -25,7 +26,7 @@ const StyledInfo = styled.div`
   flex-grow: 1;
 
   & > h2 {
-    color: mediumaquamarine;
+    color: ${color.mediumaquamarine};
     font-size: 1rem;
     margin: 0;
     padding-bottom: 0.25em;
@@ -38,7 +39,7 @@ const StyledInfo = styled.div`
 
 const StyledArrow = styled.div`
   flex: 0 0 30px;
-  color: mediumaquamarine;
+  color: ${color.mediumaquamarine};
   font-size: 2rem;
 
   & a {
